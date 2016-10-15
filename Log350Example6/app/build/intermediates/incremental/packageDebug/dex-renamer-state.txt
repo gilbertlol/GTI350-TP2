@@ -1,4 +1,4 @@
-#Wed Oct 05 19:38:06 EDT 2016
+#Sat Oct 15 14:19:40 EDT 2016
 base.0=/Users/sergenassar/StudioProjects/Log350Example6/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_547ed589b666dc15b3297a3f3c433c329e413efb
 renamed.1=classes2.dex
 renamed.0=classes.dex

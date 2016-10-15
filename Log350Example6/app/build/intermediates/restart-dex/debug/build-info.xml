@@ -4,36 +4,36 @@
     density="xxhdpi"
     format="8"
     plugin-version="2.2.0"
-    timestamp="69437637506740"
+    timestamp="66983077714794"
     token="-1760572680112116851"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="186" />
+        duration="344" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="21" />
+        duration="38" />
     <task
         name="verifier"
-        duration="5" />
+        duration="8" />
 
     <artifact
         location="/Users/sergenassar/StudioProjects/Log350Example6/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_3/classes.dex"
         type="DEX" />
 
     <build
-        timestamp="69357844470198"
+        timestamp="66615867375991"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="/Users/sergenassar/StudioProjects/Log350Example6/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
     </build>
     <build
-        timestamp="69437637506740"
+        timestamp="66983077714794"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/Users/sergenassar/StudioProjects/Log350Example6/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_3/classes.dex"

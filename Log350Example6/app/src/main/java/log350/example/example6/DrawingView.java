@@ -404,17 +404,26 @@ public class DrawingView extends View {
                             }
                             break;
                         case MODE_SHAPE_MANIPULATION:
-                            if (cursorContainer.getNumCursors() == 2 && type == MotionEvent.ACTION_MOVE && indexOfShapeBeingManipulated >= 0) {
+                            if (cursorContainer.getNumCursors() == 2 && type == MotionEvent.ACTION_MOVE) {
                                 MyCursor cursor0 = cursorContainer.getCursorByIndex(0);
                                 MyCursor cursor1 = cursorContainer.getCursorByIndex(1);
-                                Shape shape = shapeContainer.getShape(indexOfShapeBeingManipulated);
+                                Point2D p_pixels = new Point2D(cursor0.getCurrentPosition().x(), cursor0.getCurrentPosition().y());
+                                Point2D p_world = gw.convertPixelsToWorldSpaceUnits(p_pixels);
+                                int idx1 = shapeContainer.indexOfShapeContainingGivenPoint(p_world);
+                                p_pixels = new Point2D(cursor1.getCurrentPosition().x(), cursor1.getCurrentPosition().y());
+                                p_world = gw.convertPixelsToWorldSpaceUnits(p_pixels);
+                                int idx2 = shapeContainer.indexOfShapeContainingGivenPoint(p_world);
 
-                                Point2DUtil.transformPointsBasedOnDisplacementOfTwoPoints(
-                                        shape.getPoints(),
-                                        gw.convertPixelsToWorldSpaceUnits(cursor0.getPreviousPosition()),
-                                        gw.convertPixelsToWorldSpaceUnits(cursor1.getPreviousPosition()),
-                                        gw.convertPixelsToWorldSpaceUnits(cursor0.getCurrentPosition()),
-                                        gw.convertPixelsToWorldSpaceUnits(cursor1.getCurrentPosition()));
+                                if(idx1 == idx2) {
+                                    Shape shape = shapeContainer.getShape(indexOfShapeBeingManipulated);
+
+                                    Point2DUtil.transformPointsBasedOnDisplacementOfTwoPoints(
+                                            shape.getPoints(),
+                                            gw.convertPixelsToWorldSpaceUnits(cursor0.getPreviousPosition()),
+                                            gw.convertPixelsToWorldSpaceUnits(cursor1.getPreviousPosition()),
+                                            gw.convertPixelsToWorldSpaceUnits(cursor0.getCurrentPosition()),
+                                            gw.convertPixelsToWorldSpaceUnits(cursor1.getCurrentPosition()));
+                                }
                             } else if (cursorContainer.getNumCursors() == 1 && type == MotionEvent.ACTION_MOVE && indexOfShapeBeingManipulated >= 0) {
                                 MyCursor cursor0 = cursorContainer.getCursorByIndex(0);
                                 ArrayList<Point2D> lassoPolygonPoints = new ArrayList<Point2D>();

@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Wed Oct 05 19:38:06 EDT 2016
+#Sat Oct 15 14:19:40 EDT 2016
 8.set=DEX
 1.base=/Users/sergenassar/StudioProjects/Log350Example6/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_3
 1.file=/Users/sergenassar/StudioProjects/Log350Example6/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_3/classes.dex
